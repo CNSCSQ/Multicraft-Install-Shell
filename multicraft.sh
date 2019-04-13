@@ -377,7 +377,7 @@ echo -e "********欢迎使用Multicraft一键脚本！*********
 ******该脚本由 Kengwang编写 ********
 ===============Menu==============
 ->1.Multicraft下载安装
-->2.维护中,请勿进入
+->2.汉化Multicraft控制面板
 ->6.开机启动Multicraft Mysql Httpd等
 ->7.破解Multicraft           (嘿嘿,没有违规)
 ->8.修改Apache端口配置及启用htaccess
@@ -386,7 +386,7 @@ echo -e "********欢迎使用Multicraft一键脚本！*********
 read -p "请输入序号并回车：" num
 case "$num" in
 [1] ) (Installmu "Mu");;
-[2] ) (Installmu "JY");;
+[2] ) (hanhua);;
 [3] ) (byphp);;
 [4] ) (hexin);;
 [5] ) (phpaz);;
@@ -397,6 +397,16 @@ case "$num" in
 [0] ) (exit);;
 *) (Init);;
 esac
+}
+
+function hanhua(){
+echo "正在下载"
+wget "$DOWNURL/zh.zip" -O zh.zip
+echo "正在解压"
+unzip zh.zip
+echo "正在移动"
+mkdir /var/www/html/protected/messages/zh
+cp -R ./protected/messages/zh/* /var/www/html/protected/messages/zh/
 }
 
 function kjqd(){
