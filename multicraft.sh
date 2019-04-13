@@ -421,7 +421,7 @@ echo "可能已经OK!"
 
 function update(){
 echo "正在更新脚本,请稍等"
-wget -O mu.sh $DOWNURL/multicraft.sh;sh mu.sh
+wget -O multicraft.sh $DOWNURL/multicraft.sh;sh multicraft.sh
 }
 
 function apache(){
